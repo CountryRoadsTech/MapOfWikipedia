@@ -10,4 +10,8 @@ import "channels"
 Rails.start()
 ActiveStorage.start()
 
+// Include StimlusJS controllers.
 import "controllers"
+
+// Include all stylesheets.
+import "../stylesheets/application.scss";
