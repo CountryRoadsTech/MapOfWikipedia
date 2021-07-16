@@ -15,3 +15,6 @@ import "controllers"
 
 // Include all stylesheets.
 import "../stylesheets/application.scss";
+
+// Include d3.js data visualization library.
+import * as d3 from "d3";
