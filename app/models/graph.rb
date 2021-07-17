@@ -25,7 +25,7 @@ class Graph < ApplicationRecord
 
         puts "#{Time.zone.now}"
         puts "Found #{unprocessed_nodes_count} unprocessed nodes, out of #{graph.nodes.size} total nodes in the graph so far"
-        puts "#{number_to_percentage(unprocessed_nodes_count.to_f/TOTAL_NUMBER_OF_ENGLISH_WIKIPEDIA_PAGES.to_f, precision: 4)}% complete of the map of English Wikipedia complete"
+        puts "#{number_to_percentage(unprocessed_nodes_count.to_f/TOTAL_NUMBER_OF_ENGLISH_WIKIPEDIA_PAGES.to_f, precision: 4)} complete of the map of English Wikipedia"
 
         unprocessed_nodes.each do |node|
           node.save_links
@@ -37,6 +37,7 @@ class Graph < ApplicationRecord
         number_of_consecutive_errors += 1
         puts "#{Time.zone.now}"
         puts "Encountered an error: #{error}"
+        puts "#{error.backtrace}"
         puts "#{number_of_consecutive_errors} consecutive errors so far"
         if number_of_consecutive_errors >= 10
           puts "Exiting because of too many consecutive errors (> 10)..."
