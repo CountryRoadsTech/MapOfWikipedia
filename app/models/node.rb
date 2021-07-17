@@ -11,16 +11,28 @@ class Node < ApplicationRecord
   def save_links
     return if self.saved_links?
 
-    wikipedia_content = Wikipedia.find(name, pllimit: 5000)
-    unless wikipedia_content.links.nil?
-      wikipedia_content.links.each do |link_name|
-        linked_node = Node.find_or_create_by_name(link_name, graph)
-        Edge.find_or_create_from_nodes(self, linked_node, graph)
+    continue_query = nil
+    while true
+      query_options = {pllimit: 500}
+      query_options.merge!({plcontinue: continue_query}) if continue_query
+
+      wikipedia_content = Wikipedia.find(name, query_options)
+      unless wikipedia_content.links.nil?
+        wikipedia_content.links.each do |link_name|
+          linked_node = Node.find_or_create_by_name(link_name, graph)
+          Edge.find_or_create_from_nodes(self, linked_node, graph)
+        end
       end
+
+      continue_query = wikipedia_content.raw_data.dig('continue', 'plcontinue')
+      break if continue_query.nil?
     end
 
     self.saved_links = true
     self.save!
+
+    puts "#{Time.zone.now}"
+    puts "Processed links for page: #{name}"
   end
 
   def self.find_or_create_by_name(node_name, graph)
@@ -42,6 +54,8 @@ class Node < ApplicationRecord
                           raw_content: wikipedia_content.content,
                           categories: categories,
                           graph: graph)
+      puts "#{Time.zone.now}"
+      puts "Created new node for #{node_name}"
     end
 
     node
