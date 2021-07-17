@@ -11,7 +11,7 @@ class Node < ApplicationRecord
   def save_links
     return if self.saved_links?
 
-    wikipedia_content = Wikipedia.find(name)
+    wikipedia_content = Wikipedia.find(name, pllimit: 5000)
     unless wikipedia_content.links.nil?
       wikipedia_content.links.each do |link_name|
         linked_node = Node.find_or_create_by_name(link_name, graph)
@@ -36,12 +36,12 @@ class Node < ApplicationRecord
       end
 
       node = Node.create!(name: node_name,
-                      url: wikipedia_content.fullurl,
-                      summary: wikipedia_content.summary,
-                      content: wikipedia_content.text,
-                      raw_content: wikipedia_content.content,
-                      categories: categories,
-                      graph: graph)
+                          url: wikipedia_content.fullurl,
+                          summary: wikipedia_content.summary,
+                          content: wikipedia_content.text,
+                          raw_content: wikipedia_content.content,
+                          categories: categories,
+                          graph: graph)
     end
 
     node
