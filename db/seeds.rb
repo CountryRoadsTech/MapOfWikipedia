@@ -12,7 +12,7 @@ puts "Starting..."
 map_of_wikipedia = Graph.build_from_starting_node_name('Jesus', 'Map of (English) Wikipedia')
 
 puts "#{Time.zone.now}"
-puts "Map of Wikipedia...complete?"
+puts "Map of (English) Wikipedia...complete?"
 puts "#{map_of_wikipedia.nodes.count} total pages saved"
 puts "#{map_of_wikipedia.edges.count} total edges saved"
 puts "#{map_of_wikipedia.categories.count} total categories saved"

@@ -55,11 +55,13 @@ ActiveRecord::Schema.define(version: 2021_07_16_140819) do
   create_table "nodes", force: :cascade do |t|
     t.bigint "graph_id"
     t.text "name", null: false
-    t.text "url", null: false
+    t.text "url"
     t.text "summary"
     t.text "content"
     t.text "raw_content"
-    t.boolean "saved_links", default: false
+    t.boolean "began_processing_links", default: false
+    t.boolean "ended_processing_links", default: false
+    t.boolean "error_processing_links", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["graph_id"], name: "index_nodes_on_graph_id"

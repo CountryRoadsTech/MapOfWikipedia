@@ -16,35 +16,26 @@ class Graph < ApplicationRecord
     graph = Graph.create!(name: graph_name) if graph.nil?
 
     Node.find_or_create_by_name(starting_node_name, graph)
-    number_of_consecutive_errors = 0
 
     while true
-      begin
-        unprocessed_nodes = graph.nodes.where(saved_links: false)
+        unprocessed_nodes = graph.nodes.needs_processing
         unprocessed_nodes_count = unprocessed_nodes.size
+        errored_nodes_count = graph.nodes.error_processing.size
+        processed_nodes_count = graph.nodes.finished_processing.size
+        total_nodes_count = graph.nodes.size
+        total_edges_count = graph.edges.size
 
         puts "#{Time.zone.now}"
-        puts "Found #{unprocessed_nodes_count} unprocessed nodes, out of #{graph.nodes.size} total nodes in the graph so far"
-        puts "#{graph.edges.size} edges in the graph so far"
-        puts "#{number_to_percentage(graph.nodes.where(saved_links: true).size.to_f/TOTAL_NUMBER_OF_ENGLISH_WIKIPEDIA_PAGES.to_f, precision: 4)} complete of the map of English Wikipedia"
+        puts "Found #{unprocessed_nodes_count} unprocessed nodes, out of #{total_nodes_count} total nodes in the graph so far"
+        puts "#{errored_nodes_count} nodes errored trying to save links so far"
+        puts "#{total_edges_count} edges in the graph so far"
+        puts "#{number_to_percentage(processed_nodes_count.to_f/TOTAL_NUMBER_OF_ENGLISH_WIKIPEDIA_PAGES.to_f, precision: 4)} complete of the map of English Wikipedia"
 
         unprocessed_nodes.each do |node|
           node.save_links
         end
 
         break if unprocessed_nodes_count.zero?
-        number_of_consecutive_errors = 0
-      rescue => error
-        number_of_consecutive_errors += 1
-        puts "#{Time.zone.now}"
-        puts "Encountered an error: #{error}"
-        puts "#{error.backtrace.join("\n")}"
-        puts "#{number_of_consecutive_errors} consecutive errors so far"
-        if number_of_consecutive_errors >= 10
-          puts "Exiting because of too many consecutive errors (> 10)..."
-          exit
-        end
-      end
     end
 
     graph
