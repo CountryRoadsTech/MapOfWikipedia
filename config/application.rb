@@ -12,8 +12,6 @@ require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
-# require "sprockets/railtie"
-# require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -34,5 +32,8 @@ module MapOfWikipedia
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Use Sidekiq as the ActiveJob queueing backend
+    config.active_job.queue_adapter = :sidekiq
   end
 end

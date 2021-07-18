@@ -29,10 +29,10 @@ class Graph < ApplicationRecord
         puts "Found #{unprocessed_nodes_count} unprocessed nodes, out of #{total_nodes_count} total nodes in the graph so far"
         puts "#{errored_nodes_count} nodes errored trying to save links so far"
         puts "#{total_edges_count} edges in the graph so far"
-        puts "#{number_to_percentage(processed_nodes_count.to_f/TOTAL_NUMBER_OF_ENGLISH_WIKIPEDIA_PAGES.to_f, precision: 4)} complete of the map of English Wikipedia"
+        puts "#{number_to_percentage(processed_nodes_count.to_f/TOTAL_NUMBER_OF_ENGLISH_WIKIPEDIA_PAGES.to_f, precision: 4)} complete"
 
         unprocessed_nodes.each do |node|
-          node.save_links
+          SaveLinksJob.perform_later(node)
         end
 
         break if unprocessed_nodes_count.zero?

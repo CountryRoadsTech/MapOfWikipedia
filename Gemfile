@@ -23,6 +23,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Wikipedia Client is a Ruby wrapper around Wikipedia's API.
 gem 'wikipedia-client', '~> 1.15'
 
+# Use Sidekiq as the Active Job queue background.
+gem 'sidekiq', '~> 6.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
