@@ -32,7 +32,7 @@ class Graph < ApplicationRecord
         puts "#{number_to_percentage(processed_nodes_count.to_f/TOTAL_NUMBER_OF_ENGLISH_WIKIPEDIA_PAGES.to_f, precision: 4)} complete"
 
         unprocessed_nodes.each do |node|
-          SaveLinksJob.perform_later(node)
+          SaveLinksWorker.perform_async(node)
         end
 
         break if unprocessed_nodes_count.zero?
