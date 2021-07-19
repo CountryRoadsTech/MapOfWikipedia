@@ -1,8 +1,7 @@
 require 'wikipedia'
 
-class SaveLinksJob < ApplicationJob
-  queue_as :default
-  sidekiq_options retry: 3
+class SaveLinksWorker
+  include Sidekiq::Worker
 
   def perform(node)
     if node.nil?
