@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: MapOfWikipedia_production
-  username: MapOfWikipedia
-  password: <%= ENV['MAPOFWIKIPEDIA_DATABASE_PASSWORD'] %>
+  url: <%= ENV["DATABASE_URL"] %>
