@@ -34,6 +34,6 @@ module MapOfWikipedia
     config.generators.system_tests = nil
 
     # Use Sidekiq as the ActiveJob queueing backend
-    config.active_job.queue_adapter = :sidekiq
+    #config.active_job.queue_adapter = :sidekiq
   end
 end

@@ -33,7 +33,9 @@ server "50.116.36.209", user: "deploy", roles: %w{app db web}
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
-set :default_env, { DATABASE_URL: "postgresql://deploy:#{Rails.application.credentials.database_deploy_password}@localhost/mapofwikipedia" }
+set :rails_env, "production"
+
+set :default_env, { DATABASE_URL: "postgresql://deploy:#{Rails.application.credentials.deploy_database_password}@127.0.0.1/mapofwikipedia" }
 
 # Custom SSH Options
 # ==================

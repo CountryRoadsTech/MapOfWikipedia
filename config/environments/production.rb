@@ -49,9 +49,9 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
-  config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
+  #config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
 
-  config.active_job.queue_name_prefix = "MapOfWikipedia_production"
+  #config.active_job.queue_name_prefix = "MapOfWikipedia_production"
 
   config.action_mailer.perform_caching = false
 
