@@ -44,10 +44,10 @@ Rails.application.configure do
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
-  config.log_level = :info
+  #config.log_level = :info
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  #config.log_tags = [ :request_id ]
 
   #config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
 
@@ -73,7 +73,7 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation_warnings = []
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  #config.log_formatter = ::Logger::Formatter.new
 
   # Use a different logger for distributed setups.
   # require "syslog/logger"
