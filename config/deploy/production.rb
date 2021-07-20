@@ -1,5 +1,3 @@
-require 'cgi'
-
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -35,7 +33,7 @@ server "50.116.36.209", user: "deploy", roles: %w{app db web}
 
 set :rails_env, "production"
 
-set :default_env, { DATABASE_URL: "postgresql://deploy:#{Rails.application.credentials.deploy_database_password}@127.0.0.1/mapofwikipedia" }
+set :default_env, { DATABASE_URL: "postgresql://127.0.0.1/mapofwikipedia?user=deploy&password=#{Rails.application.credentials.deploy_database_password}" }
 
 # Custom SSH Options
 # ==================
