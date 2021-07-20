@@ -33,7 +33,7 @@ server "50.116.36.209", user: "deploy", roles: %w{app db web}
 
 set :rails_env, "production"
 
-set :default_env, { DATABASE_URL: "postgresql://127.0.0.1/mapofwikipedia?user=deploy&password=#{Rails.application.credentials.deploy_database_password}" }
+set :default_env, { DATABASE_URL: "postgresql://deploy:#{Rails.application.credentials.deploy_database_password}@127.0.0.1/mapofwikipedia" }
 
 # Custom SSH Options
 # ==================
