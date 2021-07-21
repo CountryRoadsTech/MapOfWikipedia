@@ -12,7 +12,6 @@ RUN apk add --update --virtual \
   readline \
   build-base \
   postgresql-dev \
-  sqlite-dev \
   libc-dev \
   linux-headers \
   readline-dev \
