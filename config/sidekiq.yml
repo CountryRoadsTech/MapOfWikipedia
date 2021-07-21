@@ -1,9 +1,0 @@
-:queues:
-  - critical
-  - default
-  - low
-  - mailers
-  - active_storage_analysis
-  - active_storage_purge
-  - active_storage_mirror
-:concurrency: 20
