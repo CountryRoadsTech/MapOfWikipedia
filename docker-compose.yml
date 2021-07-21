@@ -16,6 +16,7 @@ services:
     volumes:
       - ./config/redis.conf:/usr/local/etc/redis/redis.conf
       - redis_data:/etc/redis/database
+    command: redis-server /usr/local/etc/redis/redis.conf
 
   sidekiq:
     build: .
