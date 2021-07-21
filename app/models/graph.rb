@@ -13,16 +13,13 @@ class Graph < ApplicationRecord
 
     Node.find_or_create_by_name(starting_node_name, graph)
 
-    while true
-      unprocessed_nodes = graph.nodes.needs_processing
+    unprocessed_nodes = graph.nodes.needs_processing
+    unprocessed_nodes.each do |node|
+      ProcessNodesLinksWorker.perform_async(node.id)
+      node.update_column(:marked_for_processing_links, true)
 
-      unprocessed_nodes.each do |node|
-        ProcessNodesLinksWorker.perform_async(node.id)
-        node.update_column(:marked_for_processing_links, true)
-
-        puts "#{Time.zone.now}"
-        puts "Added #{node.name} to the processing queue"
-      end
+      puts "#{Time.zone.now}"
+      puts "Added #{node.name} to the processing queue"
     end
 
     graph
