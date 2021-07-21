@@ -34,5 +34,10 @@ module MapOfWikipedia
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Use Sidekiq as the ActiveJob background job queue processing backend.
+    config.active_job.queue_adapter = :sidekiq
+
+    config.web_console.permissions = '172.24.0.1'
   end
 end

@@ -67,10 +67,10 @@ ActiveRecord::Schema.define(version: 2021_07_21_001806) do
     t.text "summary"
     t.text "content"
     t.text "marked_up_content"
+    t.boolean "marked_for_processing_links", default: false
     t.boolean "began_processing_links", default: false
     t.boolean "ended_processing_links", default: false
     t.boolean "error_processing_links", default: false
-    t.text "error_message", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["graph_id"], name: "index_nodes_on_graph_id"

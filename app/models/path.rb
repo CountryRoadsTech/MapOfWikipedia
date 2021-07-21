@@ -3,5 +3,5 @@ class Path < ApplicationRecord
   has_and_belongs_to_many :edges
   has_many :nodes, through: :edges
 
-  validates :name, presence: true
+  validates :name, :graph, presence: true
 end

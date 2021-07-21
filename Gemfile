@@ -22,6 +22,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Sidekiq is used as the background job queue processor.
+gem 'sidekiq', '~> 6.2'
+
 # Wikipedia Client is used to access Wikipedia's API.
 gem 'wikipedia-client', '~> 1.15'
 

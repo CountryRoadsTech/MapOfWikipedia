@@ -53,6 +53,6 @@ class NodesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def node_params
-      params.require(:node).permit(:graph_id, :name, :url, :summary, :content, :marked_up_content, :began_processing_links, :ended_processing_links, :error_processing_links, :error_message)
+      params.require(:node).permit(:graph_id, :name, :url, :summary, :content, :marked_up_content)
     end
 end
