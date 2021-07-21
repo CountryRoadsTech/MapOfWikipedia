@@ -12,11 +12,9 @@ class Graph < ApplicationRecord
     graph = Graph.create!(name: graph_name) if graph.nil?
 
     Node.find_or_create_by_name(starting_node_name, graph)
+    unprocessed_nodes = graph.nodes.needs_processing
 
     while true
-      unprocessed_nodes = graph.nodes.needs_processing
-      unprocessed_nodes_count = unprocessed_nodes.count
-
       unprocessed_nodes.each do |node|
         ProcessNodesLinksWorker.perform_async(node.id)
         node.update_column(:marked_for_processing_links, true)
@@ -24,8 +22,6 @@ class Graph < ApplicationRecord
         puts "#{Time.zone.now}"
         puts "Added #{node.name} to the processing queue"
       end
-
-      break if unprocessed_nodes_count.zero?
     end
 
     graph

@@ -15,7 +15,7 @@ class ProcessNodesLinksWorker
       node.update_column(:began_processing_links, true)
       node.update_column(:error_processing_links, false)
 
-      begin
+      #begin
         continue_query = nil
         while true
           query_options = {pllimit: 500}
@@ -39,14 +39,14 @@ class ProcessNodesLinksWorker
 
         puts "#{Time.zone.now}"
         puts "Processed links for: #{node.name}"
-      rescue => error
-        node.update_column(:error_processing_links, true)
-        node.update_column(:ended_processing_links, false)
+      #rescue => error
+      # node.update_column(:error_processing_links, true)
+      #  node.update_column(:ended_processing_links, false)
 
-        puts "#{Time.zone.now}"
-        puts "ERROR: Processing #{node.name}'s links: #{error}"
-        puts "#{error.backtrace.join("\n")}"
-      end
+      #puts "#{Time.zone.now}"
+      # puts "ERROR: Processing #{node.name}'s links: #{error}"
+      #  puts "#{error.backtrace.join("\n")}"
+      #end
     end
   end
 end

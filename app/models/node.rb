@@ -8,8 +8,8 @@ class Node < ApplicationRecord
   validates :name, :graph, presence: true
   validates :name, uniqueness: true
 
-  scope :needs_processing, -> { where(marked_for_processing_links: false).where(began_processing_links: false).where(ended_processing_links: false).where(error_processing_links: false) }
-  scope :marked_for_processing, -> { where(marked_for_processing_links: true).where(began_processing_links: false).where(ended_processing_links: false).where(error_processing_links: false) }
+  scope :needs_processing, -> { where(marked_for_processing_links: false).where(began_processing_links: false).where(ended_processing_links: false) }
+  scope :marked_for_processing, -> { where(marked_for_processing_links: true).where(began_processing_links: false).where(ended_processing_links: false) }
   scope :currently_processing, -> { where(marked_for_processing_links: true).where(began_processing_links: true).where(ended_processing_links: false).where(error_processing_links: false) }
   scope :finished_processing, -> { where(marked_for_processing_links: true).where(began_processing_links: true).where(ended_processing_links: true).where(error_processing_links: false) }
   scope :errored_processing, -> { where(marked_for_processing_links: true).where(error_processing_links: true) }
