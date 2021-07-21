@@ -10,4 +10,8 @@ import "channels"
 Rails.start()
 ActiveStorage.start()
 
+// Include all StimlulsJS controllers
 import "controllers"
+
+// Include all application stylsheets
+import "stylesheets/application.scss"
