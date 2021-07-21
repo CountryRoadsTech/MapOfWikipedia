@@ -11,8 +11,10 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
-# Use Redis adapter to run Action Cable in production
+# Use Redis adapter to run Action Cable in production, and other things.
 gem 'redis', '~> 4.0'
+# Hiredis is a high speed Redis client library.
+gem 'hiredis', '~> 0.6'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 # Reduces boot times through caching; required in config/boot.rb
