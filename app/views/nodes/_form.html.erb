@@ -1,0 +1,67 @@
+<%= form_with(model: node) do |form| %>
+  <% if node.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(node.errors.count, "error") %> prohibited this node from being saved:</h2>
+
+      <ul>
+        <% node.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :graph_id %>
+    <%= form.text_field :graph_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_area :url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :summary %>
+    <%= form.text_area :summary %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :marked_up_content %>
+    <%= form.text_area :marked_up_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :began_processing_links %>
+    <%= form.check_box :began_processing_links %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ended_processing_links %>
+    <%= form.check_box :ended_processing_links %>
+  </div>
+
+  <div class="field">
+    <%= form.label :error_processing_links %>
+    <%= form.check_box :error_processing_links %>
+  </div>
+
+  <div class="field">
+    <%= form.label :error_message %>
+    <%= form.text_area :error_message %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

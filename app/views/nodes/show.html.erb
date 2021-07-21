@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Graph:</strong>
+  <%= @node.graph_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @node.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @node.url %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @node.summary %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @node.content %>
+</p>
+
+<p>
+  <strong>Marked up content:</strong>
+  <%= @node.marked_up_content %>
+</p>
+
+<p>
+  <strong>Began processing links:</strong>
+  <%= @node.began_processing_links %>
+</p>
+
+<p>
+  <strong>Ended processing links:</strong>
+  <%= @node.ended_processing_links %>
+</p>
+
+<p>
+  <strong>Error processing links:</strong>
+  <%= @node.error_processing_links %>
+</p>
+
+<p>
+  <strong>Error message:</strong>
+  <%= @node.error_message %>
+</p>
+
+<%= link_to 'Edit', edit_node_path(@node) %> |
+<%= link_to 'Back', nodes_path %>

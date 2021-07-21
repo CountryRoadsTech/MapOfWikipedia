@@ -1,0 +1,27 @@
+<%= form_with(model: path) do |form| %>
+  <% if path.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(path.errors.count, "error") %> prohibited this path from being saved:</h2>
+
+      <ul>
+        <% path.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :graph_id %>
+    <%= form.text_field :graph_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
