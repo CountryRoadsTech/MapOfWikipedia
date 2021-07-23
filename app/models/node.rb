@@ -33,10 +33,44 @@ class Node < ApplicationRecord
                           marked_up_content: wikipedia_content.content,
                           categories: categories,
                           graph: graph)
+
+      node.process_links
+
       puts "#{Time.zone.now}"
       puts "Created new node for #{node_name}"
     end
 
     node
   end
+
+  def process_links
+    return if node.began_processing_links? or node.ended_processing_links?
+    node.update_column(:began_processing_links, true)
+    node.update_column(:error_processing_links, false)
+
+    continue_query = nil
+    while true
+      query_options = {pllimit: 500}
+      query_options.merge!({plcontinue: continue_query}) if continue_query
+
+      wikipedia_content = Wikipedia.find(node.name, query_options)
+      unless wikipedia_content.links.nil?
+        wikipedia_content.links.each do |link_name|
+          linked_node = Node.find_or_create_by_name(link_name, node.graph)
+          Edge.find_or_create_from_nodes(node, linked_node, node.graph)
+        end
+      end
+
+      continue_query = wikipedia_content.raw_data.dig('continue', 'plcontinue')
+      break if continue_query.nil?
+    end
+
+    node.update_column(:ended_processing_links, true)
+    node.update_column(:error_processing_links, false)
+    node.save!
+
+    puts "#{Time.zone.now}"
+    puts "Processed links for: #{node.name}"
+  end
+  handle_asynchronously :process_links
 end

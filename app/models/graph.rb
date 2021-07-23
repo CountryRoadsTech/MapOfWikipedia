@@ -15,7 +15,7 @@ class Graph < ApplicationRecord
 
     unprocessed_nodes = graph.nodes.needs_processing
     unprocessed_nodes.each do |node|
-      ProcessNodesLinksWorker.perform_async(node.id)
+      node.process_links
       node.update_column(:marked_for_processing_links, true)
 
       puts "#{Time.zone.now}"

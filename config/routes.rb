@@ -1,5 +1,3 @@
-require 'sidekiq/web'
-
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
   resources :categories
@@ -7,6 +5,4 @@ Rails.application.routes.draw do
   resources :edges
   resources :nodes
   resources :graphs
-
-  mount Sidekiq::Web => '/sidekiq'
 end

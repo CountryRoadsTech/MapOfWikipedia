@@ -13,26 +13,24 @@ services:
     image: redis:latest
     ports:
       - "6379:6379"
-    working_dir: /var/lib/redis/data
+    working_dir: /etc/redis/data
     volumes:
-      - ./config/redis.conf:/usr/local/etc/redis/redis.conf
-      - redis_data:/var/lib/redis/data
-    command: redis-server /usr/local/etc/redis/redis.conf
+      - ./config/redis.conf:/etc/redis/redis.conf
+      - redis_data:/etc/redis/data
+    command: chown -R redis:redis /etc && redis-server /etc/redis/redis.conf
 
-  sidekiq:
+  delayed_job:
     build: .
     depends_on:
       - db
-      - redis
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - REDIS_URL=redis://redis:6379
       - RAILS_ENV=development
       - RACK_ENV=development
       - NODE_ENV=development
     volumes:
       - .:/app
-    command: bundle exec sidekiq -C config/sidekiq.yml
+    command: bundle exec rake jobs:work
 
   web:
     build: .
@@ -41,7 +39,7 @@ services:
     depends_on:
       - db
       - redis
-      - sidekiq
+      - delayed_job
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
       - REDIS_URL=redis://redis:6379
