@@ -13,7 +13,7 @@ services:
     image: redis:latest
     ports:
       - "6379:6379"
-    working_dir: /var/lib/redis
+    working_dir: /var/lib/redis/data
     volumes:
       - ./config/redis.conf:/usr/local/etc/redis/redis.conf
       - redis_data:/var/lib/redis/data
