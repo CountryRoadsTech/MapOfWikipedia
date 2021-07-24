@@ -10,7 +10,7 @@ class Graph < ApplicationRecord
   def self.find_or_create_by_name(graph_name)
     graph = Graph.find_by(name: graph_name)
     if graph.nil?
-      graph = Graph.create!(graph_name)
+      graph = Graph.create!({name: graph_name})
     end
 
     graph

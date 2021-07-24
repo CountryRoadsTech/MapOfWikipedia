@@ -20,7 +20,7 @@ services:
       - NODE_ENV=development
     volumes:
       - .:/app
-    command: bin/delayed_job -n 50 -m start
+    command: bundle exec rake jobs:work
 
   web:
     build: .
