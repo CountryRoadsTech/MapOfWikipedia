@@ -15,7 +15,8 @@ GRAPH_NAME = 'Map of (English) Wikipedia'
 puts "#{Time.zone.now}"
 puts "rake db:seed... Starting"
 
-map_of_wikipedia = Graph.build_from_starting_node_name(STARTING_PAGE_NAME, GRAPH_NAME)
+map_of_wikipedia = Graph.find_or_create_by_name(GRAPH_NAME)
+Node.find_or_create_by_name(STARTING_PAGE_NAME, map_of_wikipedia)
 
 puts "#{Time.zone.now}"
 puts "rake db:seed... Complete"

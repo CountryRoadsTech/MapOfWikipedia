@@ -34,7 +34,10 @@ class Node < ApplicationRecord
                           categories: categories,
                           graph: graph)
 
-      node.process_links
+      unless node.marked_for_processing_links?
+        node.delay.process_links
+        node.update_column(:marked_for_processing_links, true)
+      end
 
       puts "#{Time.zone.now}"
       puts "Created new node for #{node_name}"
@@ -72,5 +75,4 @@ class Node < ApplicationRecord
     puts "#{Time.zone.now}"
     puts "Processed links for: #{node.name}"
   end
-  handle_asynchronously :process_links
 end
