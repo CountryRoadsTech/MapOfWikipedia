@@ -15,9 +15,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -28,9 +28,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -41,9 +41,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -54,9 +54,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -67,9 +67,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -80,9 +80,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -93,9 +93,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -106,9 +106,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -119,9 +119,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -132,9 +132,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -145,9 +145,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -158,9 +158,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -171,9 +171,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -184,9 +184,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -197,9 +197,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -210,9 +210,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -223,9 +223,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -236,9 +236,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -249,9 +249,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -262,9 +262,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -275,9 +275,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -288,9 +288,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -301,9 +301,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -314,9 +314,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -327,9 +327,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -340,9 +340,9 @@ services:
       - db
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rake jobs:work
@@ -353,311 +353,311 @@ services:
         - db
       environment:
         - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
+        - RAILS_ENV=production
+        - RACK_ENV=production
+        - NODE_ENV=production
       volumes:
         - .:/app
       command: bundle exec rake jobs:work
 
-    delayed_job_28:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_28:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_29:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_29:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_30:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_30:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_31:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_31:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_32:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_32:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_33:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_33:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_34:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_34:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_35:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_35:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_36:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_36:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_37:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_37:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_38:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_38:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_39:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_39:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_40:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_40:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_41:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_41:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_42:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_42:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_43:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_43:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_44:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_44:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_45:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_45:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_46:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_46:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_47:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_47:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_48:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_48:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_49:
-      build:
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_49:
+    build:
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
-    delayed_job_50:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=development
-        - RACK_ENV=development
-        - NODE_ENV=development
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_50:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
   web:
     build: .
@@ -717,9 +717,9 @@ services:
       - delayed_job_50
     environment:
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-      - RAILS_ENV=development
-      - RACK_ENV=development
-      - NODE_ENV=development
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
     volumes:
       - .:/app
     command: bundle exec rails server -b 0.0.0.0
