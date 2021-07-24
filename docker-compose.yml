@@ -634,7 +634,7 @@ services:
     command: bundle exec rake jobs:work
 
   delayed_job_49:
-    build:
+    build: .
     depends_on:
       - db
     environment:
