@@ -61,7 +61,7 @@ class Node < ApplicationRecord
         unless wikipedia_content.links.nil?
           wikipedia_content.links.each do |link_name|
             linked_node = Node.find_or_create_by_name(link_name, graph)
-            Edge.find_or_create_from_nodes(node, linked_node, graph)
+            Edge.find_or_create_from_nodes(self, linked_node, graph)
           end
         end
 
