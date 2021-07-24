@@ -347,18 +347,18 @@ services:
       - .:/app
     command: bundle exec rake jobs:work
 
-    delayed_job_27:
-      build: .
-      depends_on:
-        - db
-      environment:
-        - DATABASE_URL=postgres://postgres:password@db:5432/postgres
-        - RAILS_ENV=production
-        - RACK_ENV=production
-        - NODE_ENV=production
-      volumes:
-        - .:/app
-      command: bundle exec rake jobs:work
+  delayed_job_27:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+    command: bundle exec rake jobs:work
 
   delayed_job_28:
     build: .
