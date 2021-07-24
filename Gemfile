@@ -24,8 +24,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Delayed Job is used as the background job queue processor.
 gem 'delayed_job_active_record', '~> 4.1'
-# Daemons is used by Delayed Job.
-gem 'daemons', '~> 1.4'
 
 # Wikipedia Client is used to access Wikipedia's API.
 gem 'wikipedia-client', '~> 1.15'
