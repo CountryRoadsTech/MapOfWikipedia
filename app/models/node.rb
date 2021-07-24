@@ -47,32 +47,40 @@ class Node < ApplicationRecord
   end
 
   def process_links
-    return if node.began_processing_links? or node.ended_processing_links?
-    node.update_column(:began_processing_links, true)
-    node.update_column(:error_processing_links, false)
+    return if began_processing_links? or ended_processing_links?
+    update_column(:began_processing_links, true)
+    update_column(:error_processing_links, false)
 
-    continue_query = nil
-    while true
-      query_options = {pllimit: 500}
-      query_options.merge!({plcontinue: continue_query}) if continue_query
+    begin
+      continue_query = nil
+      while true
+        query_options = {pllimit: 500}
+        query_options.merge!({plcontinue: continue_query}) if continue_query
 
-      wikipedia_content = Wikipedia.find(node.name, query_options)
-      unless wikipedia_content.links.nil?
-        wikipedia_content.links.each do |link_name|
-          linked_node = Node.find_or_create_by_name(link_name, node.graph)
-          Edge.find_or_create_from_nodes(node, linked_node, node.graph)
+        wikipedia_content = Wikipedia.find(name, query_options)
+        unless wikipedia_content.links.nil?
+          wikipedia_content.links.each do |link_name|
+            linked_node = Node.find_or_create_by_name(link_name, graph)
+            Edge.find_or_create_from_nodes(node, linked_node, graph)
+          end
         end
+
+        continue_query = wikipedia_content.raw_data.dig('continue', 'plcontinue')
+        break if continue_query.nil?
       end
 
-      continue_query = wikipedia_content.raw_data.dig('continue', 'plcontinue')
-      break if continue_query.nil?
+      update_column(:ended_processing_links, true)
+      update_column(:error_processing_links, false)
+      save!
+
+      puts "#{Time.zone.now}"
+      puts "Processed links for: #{name}"
+    rescue => error
+      update_column(:began_processing_links, false)
+      update_column(:error_processing_links, true)
+
+      puts "#{Time.zone.now}"
+      puts "Error processing node #{name}'s links: #{error.join('\n')}"
     end
-
-    node.update_column(:ended_processing_links, true)
-    node.update_column(:error_processing_links, false)
-    node.save!
-
-    puts "#{Time.zone.now}"
-    puts "Processed links for: #{node.name}"
   end
 end
