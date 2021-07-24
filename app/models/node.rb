@@ -80,7 +80,7 @@ class Node < ApplicationRecord
       update_column(:error_processing_links, true)
 
       puts "#{Time.zone.now}"
-      puts "Error processing node #{name}'s links: #{error.join('\n')}"
+      puts "Error processing node #{name}'s links: #{error.backtrace.join('\n')}"
     end
   end
 end
