@@ -4,6 +4,7 @@ class Edge < ApplicationRecord
   has_and_belongs_to_many :paths
 
   validates :name, :graph, presence: true
+  validates :name, uniqueness: true
   validate :nodes_must_have_exactly_two_present
 
   def nodes_must_have_exactly_two_present

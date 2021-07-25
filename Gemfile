@@ -22,12 +22,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Delayed Job is used as the background job queue processor.
-gem 'delayed_job_active_record', '~> 4.1'
-
-# Wikipedia Client is used to access Wikipedia's API.
-gem 'wikipedia-client', '~> 1.15'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
