@@ -2,6 +2,7 @@ version: '3.8'
 services:
   db:
     image: postgres:latest
+    shm_size: 2g
     environment:
       - POSTGRES_PASSWORD=password
     ports:
